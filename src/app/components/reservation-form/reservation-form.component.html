@@ -1,0 +1,43 @@
+<form [formGroup]="reservationForm" (ngSubmit)="submitReservation()">
+  <mat-card>
+    <mat-card-title>Új foglalás</mat-card-title>
+    <mat-card-content>
+      
+      <mat-form-field appearance="fill">
+        <mat-label>Utas neve</mat-label>
+        <input matInput formControlName="passengerName" required />
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Utas email</mat-label>
+        <input matInput formControlName="passengerEmail" required />
+      </mat-form-field>
+
+      <ng-container *ngIf="buses && buses.length > 0">
+        <mat-form-field appearance="fill">
+          <mat-label>Busz</mat-label>
+          <mat-select formControlName="busId" required>
+            <ng-container *ngFor="let bus of buses">
+              <mat-option *ngIf="bus" [value]="bus.id">
+                {{ bus.busNumber }} ({{ bus.type }})
+              </mat-option>
+            </ng-container>
+          </mat-select>
+        </mat-form-field>
+      </ng-container>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Ülőhelyek száma</mat-label>
+        <input matInput type="number" formControlName="seatCount" required />
+        <mat-icon matSuffix>event_seat</mat-icon>
+      </mat-form-field>
+
+    </mat-card-content>
+
+    <mat-card-actions>
+      <button mat-raised-button color="primary" type="submit" [disabled]="!reservationForm.valid">
+        Foglalás elküldése
+      </button>
+    </mat-card-actions>
+  </mat-card>
+</form>

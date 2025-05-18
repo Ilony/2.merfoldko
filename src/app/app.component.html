@@ -1,0 +1,18 @@
+<h1>{{ title }}</h1>
+
+<app-bus-list
+  (busSelected)="onBusSelected($event)">
+</app-bus-list>
+
+<app-passenger-list></app-passenger-list>
+
+<ng-container *ngIf="selectedBus">
+  <app-reservation-form
+    [buses]="[selectedBus]"
+    (reservationSubmitted)="onReservationSubmitted($event)">
+  </app-reservation-form>
+</ng-container>
+
+<app-ticket-list
+  [tickets]="tickets">
+</app-ticket-list>

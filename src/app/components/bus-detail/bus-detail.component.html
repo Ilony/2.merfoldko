@@ -1,0 +1,12 @@
+<mat-card *ngIf="bus">
+  <mat-card-title>Busz: {{ bus.busNumber }} részletei</mat-card-title>
+  <mat-card-content>
+    <p>Indulás: {{ bus.origin }}</p>
+    <p>Érkezés: {{ bus.destination }}</p>
+    <p>Indulási idő: {{ bus.departureTime | huDate }}</p>
+    <p>Ülőhelyek száma: {{ bus.capacity }}</p>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-raised-button color="primary" (click)="foglal()">Foglalás</button>
+  </mat-card-actions>
+</mat-card>

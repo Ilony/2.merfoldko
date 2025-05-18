@@ -1,0 +1,87 @@
+.booking-form {
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 8px;
+    max-width: 400px;
+  }
+  
+  .booking-form h2 {
+    margin-bottom: 15px;
+  }
+  
+  .booking-form label {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+  }
+  
+  .booking-form input {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+  }
+  
+  .booking-form button {
+    padding: 10px 15px;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+  /* Mobile first alap */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  padding: 1rem;
+  max-width: 100%;
+  margin: auto;
+}
+
+/* Grid vagy flexbox layout mobilra */
+.navbar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  background-color: #007bff;
+  padding: 0.5rem;
+}
+
+.navbar button {
+  flex: 1 1 45%;
+  margin: 0.25rem;
+  padding: 0.75rem;
+  color: white;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.navbar button:hover {
+  background-color: rgba(255,255,255,0.2);
+  border-radius: 5px;
+}
+
+/* Nagyobb képernyőkre */
+@media (min-width: 768px) {
+  .navbar button {
+    flex: 1 1 auto;
+    margin: 0 0.5rem;
+  }
+
+  .container {
+    max-width: 720px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    max-width: 960px;
+  }
+}

@@ -1,0 +1,9 @@
+<!-- components/passenger-list/passenger-list.component.html -->
+<mat-list>
+    <mat-list-item *ngFor="let utas of passengers">
+      <mat-icon matListIcon>person</mat-icon>
+      <h4 matLine>{{ utas | fullName }}</h4>   <!-- egyéni pipe-használat -->
+      <p matLine>{{ utas.email }}</p>
+    </mat-list-item>
+  </mat-list>
+  

@@ -1,0 +1,8 @@
+<!-- components/ticket-list/ticket-list.component.html -->
+<mat-list>
+  <mat-list-item *ngFor="let jegy of tickets">
+    <mat-icon matListIcon>confirmation_number</mat-icon>
+    <h4 matLine>Jegy #{{ jegy.id }} – {{ jegy.price }} Ft</h4>
+    <p matLine>Kiállítás: {{ jegy.issueDate| huDate }}</p>
+  </mat-list-item>
+</mat-list>
